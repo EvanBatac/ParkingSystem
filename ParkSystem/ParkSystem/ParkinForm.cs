@@ -12,14 +12,14 @@ namespace ParkSystem
     public partial class ParkinForm : Form
     {
         // Define your connection string here
-        string con = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\KARLOWEN\source\repos\ParkSystem\ParkSystem\DB\Database1.mdf;Integrated Security=True";
+        string con = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\KARLOWEN\source\repos\ParkingSystem4\ParkSystem\ParkSystem\DB\Database1.mdf;Integrated Security=True";
 
         public ParkinForm()
         {
             InitializeComponent();
 
             // Add vehicle types to the first ComboBox
-            VTypecomboBox.Items.AddRange(new string[] { "Car", "Truck", "Motorcycle" });
+            VTypecomboBox.Items.AddRange(new string[] { "MOTORBIKE", "SUV", "VAN","SEDAN" });
 
             // Add parking slots to the SlotsComboBox
             AddParkingSlots();
@@ -86,14 +86,17 @@ namespace ParkSystem
                 // Populate the brand ComboBox based on selected vehicle type
                 switch (VTypecomboBox.SelectedItem.ToString())
                 {
-                    case "Car":
-                        VBrandcomboBox.Items.AddRange(new string[] { "Toyota", "Honda", "Ford" });
+                    case "VAN":
+                        VBrandcomboBox.Items.AddRange(new string[] { "Mercedes-Benz", "Volkswagen", "Ford Transit" });
                         break;
-                    case "Truck":
-                        VBrandcomboBox.Items.AddRange(new string[] { "Volvo", "Scania", "MAN" });
+                    case "SUV":
+                        VBrandcomboBox.Items.AddRange(new string[] { "Ford", "Toyota", "Chevrolet" });
                         break;
-                    case "Motorcycle":
+                    case "MOTORBIKE":
                         VBrandcomboBox.Items.AddRange(new string[] { "Harley-Davidson", "Yamaha", "Suzuki" });
+                        break;
+                    case "SEDAN":
+                        VBrandcomboBox.Items.AddRange(new string[] { "Honda", "Toyota", "BMW" });
                         break;
                 }
             }
@@ -115,10 +118,51 @@ namespace ParkSystem
         }
 
         private void parkinButton_Click(object sender, EventArgs e)
-        {
+            {
             // Handle ParkIn button click event
-            InsertDataIntoParkinTable();
+            // Check if Plate Number, Vehicle Type, and Vehicle Brand are not empty
+            if (!string.IsNullOrWhiteSpace(PNumberTxtbox.Text) &&
+                VTypecomboBox.SelectedIndex != -1 && // Ensure an item is selected in the combo box
+                VBrandcomboBox.SelectedIndex != -1 && // Ensure an item is selected in the combo box
+                SlotscomboBox.SelectedIndex != -1) // Ensure an item is selected in the combo box
+            {
+                // If all fields are filled, insert data into the Parkin table
+                InsertDataIntoParkinTable();
+            }
+            else
+            {
+                // If any field is empty, show an error message or handle it accordingly
+                MessageBox.Show("Please fill in all fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+
+
+
         }
+
+        public void updateSlot(string selectedSlot) { 
+                try
+                {
+                    using (SqlConnection connection = new SqlConnection(con))
+                    {
+                        connection.Open();
+
+                        string query = "UPDATE V_Slots SET s_Availability = 0 WHERE s_loc = @SelectedSlot";
+
+                        using (SqlCommand command = new SqlCommand(query, connection))
+                        {
+                            command.Parameters.AddWithValue("@SelectedSlot", selectedSlot);
+                            command.ExecuteNonQuery();
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
 
         private void InsertDataIntoParkinTable()
         {
@@ -127,8 +171,9 @@ namespace ParkSystem
             string vType = VTypecomboBox.SelectedItem.ToString();
             string vBrand = VBrandcomboBox.SelectedItem.ToString();
             string parkedSlot = SlotscomboBox.SelectedItem.ToString();
-            DateTime parkedDate = DateTime.Now.Date;
-            TimeSpan parkedInHour = DateTime.Now.TimeOfDay;
+            DateTime parkedDateTime = DateTime.Now;
+            string parkedDateFormatted = parkedDateTime.ToString("yyyy-MM-dd"); // Format date as "YYYY-MM-DD"
+            string parkedTimeFormatted = parkedDateTime.ToString("HH:mm:ss"); // Format time as "HH:MM:SS"
 
             try
             {
@@ -167,8 +212,8 @@ namespace ParkSystem
                     }
 
                     // Define the SQL query
-                    string query = @"INSERT INTO Parkin (plateNumber, vType, vBrand, parkedDate, parkedInHour, parkedSlot, vStatus)
-                                     VALUES (@PlateNumber, @VType, @VBrand, @ParkedDate, @ParkedInHour, @ParkedSlot, @vStatus)";
+                    string query = @"INSERT INTO Parkin (plateNumber, vType, vBrand, parkedDate, parkedinHour, parkedSlot, vStatus)
+                             VALUES (@PlateNumber, @VType, @VBrand, @ParkedDate, @ParkedInHour, @ParkedSlot, @vStatus)";
 
                     // Create the SQL command
                     using (SqlCommand command = new SqlCommand(query, connection))
@@ -177,13 +222,14 @@ namespace ParkSystem
                         command.Parameters.AddWithValue("@PlateNumber", plateNumber);
                         command.Parameters.AddWithValue("@VType", vType);
                         command.Parameters.AddWithValue("@VBrand", vBrand);
-                        command.Parameters.AddWithValue("@ParkedDate", parkedDate);
-                        command.Parameters.AddWithValue("@ParkedInHour", parkedInHour);
+                        command.Parameters.AddWithValue("@ParkedDate", parkedDateFormatted); // Store the formatted date
+                        command.Parameters.AddWithValue("@ParkedInHour", parkedTimeFormatted); // Store the formatted time
                         command.Parameters.AddWithValue("@ParkedSlot", parkedSlot);
                         command.Parameters.AddWithValue("@vStatus", "PARKED");
 
                         // Execute the command
                         command.ExecuteNonQuery();
+                        updateSlot(parkedSlot);
                     }
                 }
 
@@ -200,6 +246,9 @@ namespace ParkSystem
             }
         }
 
+
+
+
         private void ClearFormFields()
         {
             // Clear all form fields after insertion
@@ -207,6 +256,11 @@ namespace ParkSystem
             VTypecomboBox.SelectedIndex = -1;
             VBrandcomboBox.SelectedIndex = -1;
             SlotscomboBox.SelectedIndex = -1;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

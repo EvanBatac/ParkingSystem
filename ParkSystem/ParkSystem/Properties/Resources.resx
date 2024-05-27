@@ -127,17 +127,17 @@
   <data name="icons8-ledger-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-ledger-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Car parking information sign vector image on VectorStock1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Car parking information sign vector image on VectorStock1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-home-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-home-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="parkingSpace" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\parkingSpace.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-carpark-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-carpark-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="roundtxt" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\roundtxt.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="userProfile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\userProfile.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-garage-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-garage-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,8 +151,8 @@
   <data name="icons8-carpark-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-carpark-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="userProfile" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\userProfile.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-carpark-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-carpark-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-parking-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-parking-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -165,6 +165,9 @@
   </data>
   <data name="icons8-log-out-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-log-out-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="userProfile1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\userProfile1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Premium Vector _ Car parking top view cartoon empty street road vector illustration3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Premium Vector _ Car parking top view cartoon empty street road vector illustration3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,26 +184,23 @@
   <data name="DashboardIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DashboardIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_Parking Permit Hang Tags (001-500 Numbered) Parking Pass Hangtags - Hang Tags for Cars in Parking Lots 3__ x 5__ - Yellow_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\_Parking Permit Hang Tags (001-500 Numbered) Parking Pass Hangtags - Hang Tags for Cars in Parking Lots 3__ x 5__ - Yellow_1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="loginIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\loginIcon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Car parking information sign vector image on VectorStock" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Car parking information sign vector image on VectorStock.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Premium Vector _ Car parking top view cartoon empty street road vector illustration" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Premium Vector _ Car parking top view cartoon empty street road vector illustration.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="_Parking Permit Hang Tags (001-500 Numbered) Parking Pass Hangtags - Hang Tags for Cars in Parking Lots 3__ x 5__ - Yellow_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\_Parking Permit Hang Tags (001-500 Numbered) Parking Pass Hangtags - Hang Tags for Cars in Parking Lots 3__ x 5__ - Yellow_1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="parkingLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\parkingLogo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-home-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-home-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Premium Vector _ Car parking top view cartoon empty street road vector illustration" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Premium Vector _ Car parking top view cartoon empty street road vector illustration.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-data-grid-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-data-grid-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Car parking information sign vector image on VectorStock1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Car parking information sign vector image on VectorStock1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-parking-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-parking-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -217,13 +217,19 @@
   <data name="icon-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="userProfile1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\userProfile1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-data-grid-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-data-grid-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="parkIcon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\parkIcon11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Premium Vector _ Car parking top view cartoon empty street road vector illustration (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Premium Vector _ Car parking top view cartoon empty street road vector illustration (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_Parking Permit Hang Tags (001-500 Numbered) Parking Pass Hangtags - Hang Tags for Cars in Parking Lots 3__ x 5__ - Yellow_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\_Parking Permit Hang Tags (001-500 Numbered) Parking Pass Hangtags - Hang Tags for Cars in Parking Lots 3__ x 5__ - Yellow_2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Premium Vector _ Car parking top view cartoon empty street road vector illustration (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Premium Vector _ Car parking top view cartoon empty street road vector illustration (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-refresh-30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-refresh-30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

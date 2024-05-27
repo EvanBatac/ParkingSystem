@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,10 +13,58 @@ namespace ParkSystem
 {
     public partial class MainForm : Form
     {
+        string con = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\KARLOWEN\source\repos\ParkingSystem4\ParkSystem\ParkSystem\DB\Database1.mdf;Integrated Security=True";
+
         public MainForm()
         {
             InitializeComponent();
+            adminName.Text = UserDetails.Instance.getName();
+            slots.Text = CountAvailableSlots() + "";
+            carParked.Text = CountParkedVehicle() + "";
         }
+
+        public int CountAvailableSlots()
+        {
+            int availableSlotCount = 0;
+
+            string query = "SELECT COUNT(*) FROM V_Slots WHERE s_Availability = 1";
+
+            using (SqlConnection connection = new SqlConnection(con))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    connection.Open();
+
+                    // Execute the query and get the count
+                    availableSlotCount = (int)command.ExecuteScalar();
+                }
+            }
+
+            // Return the count of available slots
+            return availableSlotCount;
+        }
+
+        public int CountParkedVehicle()
+        {
+            int availableSlotCount = 0;
+
+            string query = "SELECT COUNT(*) FROM V_Slots WHERE s_Availability = 0";
+
+            using (SqlConnection connection = new SqlConnection(con))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    connection.Open();
+
+                    // Execute the query and get the count
+                    availableSlotCount = (int)command.ExecuteScalar();
+                }
+            }
+
+            // Return the count of available slots
+            return availableSlotCount;
+        }
+
 
         private void button1_Click(object sender, EventArgs e)
         {

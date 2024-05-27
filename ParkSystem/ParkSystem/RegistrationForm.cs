@@ -15,7 +15,9 @@ using System.Threading;
 namespace ParkSystem
 {
     public partial class RegistrationForm : Form
-    {        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\KARLOWEN\source\repos\ParkSystem\ParkSystem\DB\Database1.mdf;Integrated Security=True");
+    {      
+        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\KARLOWEN\source\repos\ParkingSystem4\ParkSystem\ParkSystem\DB\Database1.mdf;Integrated Security=True");
+        string conn= @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\KARLOWEN\source\repos\ParkingSystem4\ParkSystem\ParkSystem\DB\Database1.mdf;Integrated Security=True";
 
         public RegistrationForm()
         {
@@ -38,8 +40,9 @@ namespace ParkSystem
         {
 
         }
+        
 
-        private void label6_Click(object sender, EventArgs e)
+    private void label6_Click(object sender, EventArgs e)
         {
 
         }
@@ -98,8 +101,12 @@ namespace ParkSystem
 
                                 MessageBox.Show("Registered successfully", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                                int adminData = GetAdminById(textBox1.Text.Trim());
+                                UserDetails.Instance.setId(adminData);
+                                insertLogs(UserDetails.Instance.getId());
                                 MainForm mainForm = new MainForm();
                                 mainForm.Show();
+                            
                                 this.Hide();
 
 
@@ -117,6 +124,25 @@ namespace ParkSystem
             }
         }
 
+        public void insertLogs(int id)
+        {
+            string query = "INSERT INTO Admin_logs (adminID) VALUES (@AdminID)";
+
+            using (SqlConnection connection = new SqlConnection(conn))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    // Add parameters
+                    command.Parameters.AddWithValue("@AdminID", id);
+
+                    connection.Open();
+
+                    // Execute the query to insert the log
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox1.Checked)
@@ -129,5 +155,43 @@ namespace ParkSystem
                 textBox3.PasswordChar = '*';
             }
         }
+
+        public int GetAdminById(string username)
+        {
+            string[] adminData = new string[3]; 
+
+            string query = "SELECT id, username, password, date_created FROM admin WHERE username = @username";
+
+            using (SqlConnection connection = new SqlConnection(conn))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    // Add parameter for the ID
+                    command.Parameters.AddWithValue("@username", username);
+
+                    connection.Open();
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            // Read data from the reader
+                            int fetchedId = reader.GetInt32(0);
+
+                            // Assign admin data to the array
+                            return  fetchedId ;
+
+                        }
+                    }
+                }
+            }
+
+            // Return the admin data array
+            return 0;
+        }
+
+
+
+
     }
 }
